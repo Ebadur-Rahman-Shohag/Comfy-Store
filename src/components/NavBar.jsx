@@ -5,7 +5,7 @@ import NavLinks from "./NavLinks";
 import { useEffect, useState } from "react";
 
 const themes = {
-  autumn: "autumn",
+  autumn: "winter",
   dracula: "dracula",
 };
 
@@ -17,8 +17,8 @@ const Navbar = () => {
   const [theme, setTheme] = useState(getThemeFromLocalStorage());
 
   function handleTheme() {
-    const { autumn, dracula } = themes;
-    const newTheme = theme === autumn ? dracula : autumn;
+    const { winter, dracula } = themes;
+    const newTheme = theme === winter ? dracula : winter;
  
     setTheme(newTheme);
   }

@@ -10,6 +10,8 @@ import Orders from "./pages/Orders";
 import Products from "./pages/Products";
 import Register from "./pages/Register";
 import SingleProduct from "./pages/SingleProduct";
+import ErrorElement from "./components/ErrorElement";
+import { loader as landingLoader } from "./pages/Landing";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +19,13 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
-     /*An index route can be thought of as a default child route. In React Router, if no children match a parent route, it will display an index route if one is defined. An index route has no path and instead has an index Boolean property*/
-      { index: true, element: <Landing /> },
+      /*An index route can be thought of as a default child route. In React Router, if no children match a parent route, it will display an index route if one is defined. An index route has no path and instead has an index Boolean property*/
+      {
+        index: true,
+        element: <Landing />,
+        loader: landingLoader,
+        errorElement: <ErrorElement />,
+      },
       { path: "about", element: <About /> },
       { path: "products", element: <Products /> },
       { path: "singleproduct/:id", element: <SingleProduct /> },
