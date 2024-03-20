@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import SingleProduct from "./pages/SingleProduct";
 import ErrorElement from "./components/ErrorElement";
 import { loader as landingLoader } from "./pages/Landing";
+import { loader as singleProductLoader } from "./pages/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,12 @@ const router = createBrowserRouter([
       },
       { path: "about", element: <About /> },
       { path: "products", element: <Products /> },
-      { path: "singleproduct/:id", element: <SingleProduct /> },
+      {
+        path: "products/:id",
+        element: <SingleProduct />,
+        loader: singleProductLoader,
+        errorElement: <ErrorElement />,
+      },
       { path: "cart", element: <Cart /> },
       { path: "orders", element: <Orders /> },
       { path: "checkout", element: <Checkout /> },
