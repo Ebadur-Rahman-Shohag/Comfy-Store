@@ -1,5 +1,5 @@
 import SectionTitle from "./SectionTitle";
-import ProductGrid from "./ProductGrid";
+import ProductGrid from "./ProductsGrid";
 function FeaturedProducts() {
   return (
     <div className="pt-24">
